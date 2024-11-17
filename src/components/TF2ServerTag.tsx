@@ -35,7 +35,7 @@ const TF2ServerTag = (props: {
       ? "https://steamcdn-a.akamaihd.net/apps/tf2/artwork/expiration_date_07.jpg"
       : "UNREACHABLE";
   return (
-    <div className="bg-gray-700 p-2 rounded ring-1 ring-gray-600 col-span-2 relative overflow-clip">
+    <div className="bg-gray-700 p-2 rounded ring-1 ring-gray-600 min-h-32 lg:col-span-2 relative overflow-clip">
       {props.image !== "None" && (
         <img
           src={backimg}
@@ -43,7 +43,7 @@ const TF2ServerTag = (props: {
           className="absolute h-full top-0 left-0 [mask-image:linear-gradient(90deg,white,rgba(255,255,255,0))] opacity-25"
         />
       )}
-      <div className="absolute bottom-1 left-1 text-sm text-gray-500">
+      <div className="absolute bottom-1 left-1 text-[10px] sm:text-sm text-gray-400 sm:text-gray-500">
         <pre>{`players: ${props.players}/${props.maxplayers}`}</pre>
         <pre>{`mapname: ${props.mapname}`}</pre>
         <pre>{`hostname: ${props.hostname}`}</pre>
