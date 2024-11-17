@@ -1,5 +1,6 @@
 "use client";
 
+import { HttpResponseTag } from "@/components/fetchers/HttpResponseTag";
 import { TF2PotatoServerTag } from "@/components/fetchers/TF2PotatoServerTag";
 import { HardwareTag } from "@/components/HardwareTag";
 import { useEffect, useState } from "react";
@@ -31,15 +32,40 @@ export default function Home() {
       <p className="px-4 text-gray-500">Deployments</p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
         <div className="space-y-4">
-          <HardwareTag name="manczak-net" color="gray" status="Unknown" />
-          <HardwareTag name="manczak-api" color="gray" status="Unknown" />
-          <HardwareTag name="quotes-zsk" color="gray" status="Unknown" />
-          <HardwareTag name="quotes-uam" color="gray" status="Unknown" />
+          <HardwareTag
+            name="manczak-net"
+            color="gray"
+            status="Unknown (CORS)"
+          />
+          <HttpResponseTag
+            refresh={refresh}
+            name="api.manczak.net"
+            url="https://api.manczak.net"
+          />
+          {/* <HttpResponseTag
+            refresh={refresh}
+            name="quotes-uam"
+            url="https://kogni.manczak.net"
+          /> */}
+          <HardwareTag
+            name="Quotes (UAM)"
+            color="gray"
+            status="Unknown (CORS)"
+          />
+          <HardwareTag
+            name="Quotes (ZSK)"
+            color="gray"
+            status="Unknown (CORS)"
+          />
         </div>
         <TF2PotatoServerTag refresh={refresh} />
-        <HardwareTag name="debatecore" color="gray" status="Unknown" />
-        <HardwareTag name="debatetools" color="gray" status="Unknown" />
-        <HardwareTag name="gractwo-pl" color="gray" status="Unknown" />
+        <HardwareTag name="debateco.re" color="gray" status="Unknown (CORS)" />
+        <HttpResponseTag
+          refresh={refresh}
+          name="tools.debateco.re"
+          url="https://tools.debateco.re"
+        />
+        <HardwareTag name="gractwo.pl" color="gray" status="Unknown (CORS)" />
       </div>
       <p className="px-4 text-gray-500 mt-4">Hardware</p>
       <div className="grid grid-cols-1 gap-4 p-4">
