@@ -1,7 +1,5 @@
 "use client";
 
-import { DoubleStatusTag } from "@/components/DoubleStatusTag";
-import { DoubleHttpResponseTag } from "@/components/fetchers/DoubleHttpResponseTag";
 import { HttpResponseTag } from "@/components/fetchers/HttpResponseTag";
 import { TF2PotatoServerTag } from "@/components/fetchers/TF2PotatoServerTag";
 import { StatusTag } from "@/components/StatusTag";
