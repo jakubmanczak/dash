@@ -1,11 +1,13 @@
 import { BlinkDot } from "./BlinkDot";
 
-const HardwareTag = (props: {
+type StatusTagProps = {
   name: string;
   status: string;
   ping?: boolean;
   color: "emerald" | "yellow" | "red" | "gray";
-}) => {
+};
+
+const StatusTag = (props: StatusTagProps) => {
   return (
     <div className="bg-gray-700 p-2 rounded ring-1 ring-gray-600 flex flex-row items-center">
       <span className="mx-1">
@@ -17,4 +19,5 @@ const HardwareTag = (props: {
   );
 };
 
-export { HardwareTag };
+export { StatusTag };
+export type { StatusTagProps };

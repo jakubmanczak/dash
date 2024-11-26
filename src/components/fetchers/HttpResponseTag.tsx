@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { HardwareTag } from "../HardwareTag";
+import { StatusTag } from "../StatusTag";
 
 const HttpResponseTag = (props: {
   refresh: number;
@@ -22,10 +22,10 @@ const HttpResponseTag = (props: {
   return (
     <>
       {state === 0 && (
-        <HardwareTag name={props.name} color="gray" status="Unknown" />
+        <StatusTag name={props.name} color="gray" status="Unknown" />
       )}
       {state.toString().startsWith("2") && (
-        <HardwareTag
+        <StatusTag
           name={props.name}
           color="emerald"
           status={`OK (${state})`}
@@ -33,14 +33,10 @@ const HttpResponseTag = (props: {
         />
       )}
       {state >= 400 && state !== 502 && (
-        <HardwareTag
-          name={props.name}
-          color="red"
-          status={`Errors (${state})`}
-        />
+        <StatusTag name={props.name} color="red" status={`Errors (${state})`} />
       )}
       {(state === 502 || state === 521) && (
-        <HardwareTag
+        <StatusTag
           name={props.name}
           color="gray"
           status={`Offline (${state})`}

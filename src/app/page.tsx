@@ -1,8 +1,10 @@
 "use client";
 
+import { DoubleStatusTag } from "@/components/DoubleStatusTag";
+import { DoubleHttpResponseTag } from "@/components/fetchers/DoubleHttpResponseTag";
 import { HttpResponseTag } from "@/components/fetchers/HttpResponseTag";
 import { TF2PotatoServerTag } from "@/components/fetchers/TF2PotatoServerTag";
-import { HardwareTag } from "@/components/HardwareTag";
+import { StatusTag } from "@/components/StatusTag";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -32,44 +34,51 @@ export default function Home() {
       <p className="px-4 text-gray-500">Deployments</p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
         <div className="space-y-4">
-          <HardwareTag
-            name="manczak-net"
-            color="gray"
-            status="Unknown (CORS)"
-          />
+          <StatusTag name="manczak-net" color="gray" status="Unknown (CORS)" />
           <HttpResponseTag
             refresh={refresh}
             name="api.manczak.net"
             url="https://api.manczak.net"
+          />
+          {/* <StatusTag name="debateco.re" color="gray" status="Unknown (CORS)" /> */}
+          <HttpResponseTag
+            refresh={refresh}
+            name="debateco.re"
+            url="https://debateco.re"
+          />
+          <HttpResponseTag
+            refresh={refresh}
+            name="tools.debateco.re"
+            url="https://tools.debateco.re"
           />
           {/* <HttpResponseTag
             refresh={refresh}
             name="quotes-uam"
             url="https://kogni.manczak.net"
           /> */}
-          <HardwareTag
-            name="Quotes (UAM)"
-            color="gray"
-            status="Unknown (CORS)"
-          />
-          <HardwareTag
-            name="Quotes (ZSK)"
-            color="gray"
-            status="Unknown (CORS)"
-          />
+          {/* <StatusTag name="Quotes (UAM)" color="gray" status="Unknown (CORS)" />
+          <StatusTag name="Quotes (ZSK)" color="gray" status="Unknown (CORS)" /> */}
         </div>
         <TF2PotatoServerTag refresh={refresh} />
-        <HardwareTag name="debateco.re" color="gray" status="Unknown (CORS)" />
-        <HttpResponseTag
+        {/* <DoubleHttpResponseTag
           refresh={refresh}
-          name="tools.debateco.re"
-          url="https://tools.debateco.re"
+          upperName="UAM Quotes (Facade)"
+          lowerName="UAM Quotes (Engine)"
+          upperUrl="https://kogni.manczak.net/"
+          lowerUrl="https://kogni.manczak.net/api/"
         />
-        <HardwareTag name="gractwo.pl" color="gray" status="Unknown (CORS)" />
+        <DoubleHttpResponseTag
+          refresh={refresh}
+          upperName="ZSK Quotes (Facade)"
+          lowerName="ZSK Quotes (Engine)"
+          upperUrl="https://zsk.manczak.net/"
+          lowerUrl="https://zsk.manczak.net/api/"
+        />
+        <StatusTag name="gractwo.pl" color="gray" status="Unknown (CORS)" /> */}
       </div>
       <p className="px-4 text-gray-500 mt-4">Hardware</p>
       <div className="grid grid-cols-1 gap-4 p-4">
-        <HardwareTag name="saxony" color="emerald" status="OK" ping />
+        <StatusTag name="saxony" color="emerald" status="OK" ping />
       </div>
       <hr className="border-gray-700 my-4" />
       <p className="text-[12px] text-right text-gray-500">
