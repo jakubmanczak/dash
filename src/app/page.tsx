@@ -32,7 +32,12 @@ export default function Home() {
       <p className="px-4 text-gray-500">Deployments</p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
         <div className="space-y-4">
-          <StatusTag name="manczak-net" color="gray" status="Unknown (CORS)" />
+          {/* <StatusTag name="manczak-net" color="gray" status="Unknown (CORS)" /> */}
+          <HttpResponseTag
+            refresh={refresh}
+            name="manczak.net"
+            url="https://manczak.net"
+          />
           <HttpResponseTag
             refresh={refresh}
             name="api.manczak.net"
